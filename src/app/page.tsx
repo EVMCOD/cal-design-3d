@@ -6,7 +6,7 @@ type BrandItem =
 
 const compatibleBrands: BrandItem[] = [
   { name: "KTM", kind: "image", src: "/brand-logos/ktm.svg" },
-  { name: "Honda", kind: "image", src: "/brand-logos/honda.svg" },
+  { name: "HRC", kind: "text" },
   { name: "Suzuki", kind: "image", src: "/brand-logos/suzuki.svg" },
   { name: "Husqvarna", kind: "image", src: "/brand-logos/husqvarna.svg" },
   { name: "Ducati", kind: "image", src: "/brand-logos/ducati.svg" },
@@ -14,7 +14,7 @@ const compatibleBrands: BrandItem[] = [
   { name: "Yamaha", kind: "image", src: "/brand-logos/yamaha.svg" },
   { name: "GasGas", kind: "text" },
   { name: "KTM", kind: "image", src: "/brand-logos/ktm.svg" },
-  { name: "Honda", kind: "image", src: "/brand-logos/honda.svg" },
+  { name: "HRC", kind: "text" },
   { name: "Suzuki", kind: "image", src: "/brand-logos/suzuki.svg" },
   { name: "Husqvarna", kind: "image", src: "/brand-logos/husqvarna.svg" },
   { name: "Ducati", kind: "image", src: "/brand-logos/ducati.svg" },
