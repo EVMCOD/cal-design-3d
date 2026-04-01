@@ -4,6 +4,12 @@ type BrandItem =
   | { name: string; kind: "image"; src: string; className?: string }
   | { name: string; kind: "text" };
 
+type CategoryBlock = {
+  title: string;
+  text: string;
+  image: string;
+};
+
 const compatibleBrands: BrandItem[] = [
   { name: "KTM", kind: "image", src: "/brand-logos/ktm.svg" },
   { name: "Honda", kind: "image", src: "/brand-logos/honda-wing.svg" },
@@ -23,30 +29,36 @@ const compatibleBrands: BrandItem[] = [
   { name: "GasGas", kind: "text" },
 ];
 
-const categoryBlocks = [
+const categoryBlocks: CategoryBlock[] = [
   {
     title: "Protectores",
     text: "Piezas pensadas para golpes, barro, vibración y uso real en motocross y enduro.",
+    image: "/mock-products/protectores.jpg",
   },
   {
     title: "Soportes",
     text: "Soluciones de fijación y anclaje para accesorios, equipamiento y montaje limpio.",
+    image: "/mock-products/soportes.jpg",
   },
   {
     title: "Piezas funcionales",
     text: "Componentes orientados a resolver necesidades concretas de ajuste, uso y compatibilidad.",
+    image: "/mock-products/piezas-funcionales.jpg",
   },
   {
     title: "Accesorios",
     text: "Elementos complementarios con enfoque visual limpio y utilidad real sobre la moto.",
+    image: "/mock-products/accesorios.jpg",
   },
   {
     title: "Ajuste por modelo",
     text: "Diseños adaptados a marca, modelo, cilindrada y año para mejorar encaje y montaje.",
+    image: "/mock-products/ajuste-modelo.jpg",
   },
   {
     title: "Desarrollo a medida",
     text: "Cuando no existe la pieza, se diseña una solución desde cero con criterio de uso real.",
+    image: "/mock-products/desarrollo-medida.jpg",
   },
 ];
 
@@ -188,10 +200,16 @@ export default function Home() {
 
         <div className="mt-10 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
           {categoryBlocks.map((item) => (
-            <article key={item.title} className="rounded-[30px] border border-white/10 bg-white/5 p-6 shadow-sm">
-              <div className="mb-5 h-1 w-16 rounded-full bg-orange-500" />
-              <h3 className="text-2xl font-semibold tracking-tight text-white">{item.title}</h3>
-              <p className="mt-4 text-sm leading-7 text-zinc-400">{item.text}</p>
+            <article key={item.title} className="overflow-hidden rounded-[30px] border border-white/10 bg-white/5 shadow-sm">
+              <div className="relative h-52 overflow-hidden">
+                <Image src={item.image} alt={item.title} fill className="object-cover" />
+                <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(0,0,0,0.08),rgba(0,0,0,0.58))]" />
+              </div>
+              <div className="p-6">
+                <div className="mb-5 h-1 w-16 rounded-full bg-orange-500" />
+                <h3 className="text-2xl font-semibold tracking-tight text-white">{item.title}</h3>
+                <p className="mt-4 text-sm leading-7 text-zinc-400">{item.text}</p>
+              </div>
             </article>
           ))}
         </div>
