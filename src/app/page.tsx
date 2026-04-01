@@ -1,14 +1,26 @@
 import Image from "next/image";
 
-const compatibleBrands = [
-  { name: "KTM", src: "/brand-logos/ktm.svg" },
-  { name: "Honda", src: "/brand-logos/honda.svg" },
-  { name: "Suzuki", src: "/brand-logos/suzuki.svg" },
-  { name: "Husqvarna", src: "/brand-logos/husqvarna.svg" },
-  { name: "KTM", src: "/brand-logos/ktm.svg" },
-  { name: "Honda", src: "/brand-logos/honda.svg" },
-  { name: "Suzuki", src: "/brand-logos/suzuki.svg" },
-  { name: "Husqvarna", src: "/brand-logos/husqvarna.svg" },
+type BrandItem =
+  | { name: string; kind: "image"; src: string }
+  | { name: string; kind: "text" };
+
+const compatibleBrands: BrandItem[] = [
+  { name: "KTM", kind: "image", src: "/brand-logos/ktm.svg" },
+  { name: "Honda", kind: "image", src: "/brand-logos/honda.svg" },
+  { name: "Suzuki", kind: "image", src: "/brand-logos/suzuki.svg" },
+  { name: "Husqvarna", kind: "image", src: "/brand-logos/husqvarna.svg" },
+  { name: "Ducati", kind: "image", src: "/brand-logos/ducati.svg" },
+  { name: "Kawasaki", kind: "image", src: "/brand-logos/kawasaki.svg" },
+  { name: "Yamaha", kind: "image", src: "/brand-logos/yamaha.svg" },
+  { name: "GasGas", kind: "text" },
+  { name: "KTM", kind: "image", src: "/brand-logos/ktm.svg" },
+  { name: "Honda", kind: "image", src: "/brand-logos/honda.svg" },
+  { name: "Suzuki", kind: "image", src: "/brand-logos/suzuki.svg" },
+  { name: "Husqvarna", kind: "image", src: "/brand-logos/husqvarna.svg" },
+  { name: "Ducati", kind: "image", src: "/brand-logos/ducati.svg" },
+  { name: "Kawasaki", kind: "image", src: "/brand-logos/kawasaki.svg" },
+  { name: "Yamaha", kind: "image", src: "/brand-logos/yamaha.svg" },
+  { name: "GasGas", kind: "text" },
 ];
 
 const productHighlights = [
@@ -45,6 +57,14 @@ const trustPoints = [
   "Ajustes según necesidad, pieza o referencia",
   "Marca enfocada a producto, no a humo visual",
 ];
+
+function BrandItemView({ brand }: { brand: BrandItem }) {
+  if (brand.kind === "text") {
+    return <span className="brand-text-fallback">{brand.name}</span>;
+  }
+
+  return <Image src={brand.src} alt={brand.name} width={140} height={44} className="brand-logo-image" />;
+}
 
 export default function Home() {
   return (
@@ -136,7 +156,7 @@ export default function Home() {
             <div className="ticker-track ticker-track-smooth">
               {compatibleBrands.map((brand, index) => (
                 <div key={`${brand.name}-${index}`} className="ticker-logo-wrap" aria-label={brand.name}>
-                  <Image src={brand.src} alt={brand.name} width={140} height={44} className="brand-logo-image" />
+                  <BrandItemView brand={brand} />
                 </div>
               ))}
             </div>
