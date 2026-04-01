@@ -87,23 +87,23 @@ button {
   display: flex;
   align-items: center;
   justify-content: center;
-  min-width: 240px;
-  padding-inline: 2.25rem;
+  min-width: 260px;
+  padding-inline: 2.5rem;
 }
 
 .brand-logo-image {
-  height: 30px;
+  height: 34px;
   width: auto;
-  opacity: 0.9;
+  opacity: 0.92;
   filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(0%) hue-rotate(35deg) brightness(108%) contrast(102%);
 }
 
 .brand-logo-kawasaki {
-  height: 28px;
+  height: 36px;
 }
 
 .brand-logo-yamaha {
-  height: 36px;
+  height: 44px;
 }
 
 .brand-text-fallback {
