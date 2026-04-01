@@ -1,7 +1,7 @@
 import Image from "next/image";
 
 type BrandItem =
-  | { name: string; kind: "image"; src: string }
+  | { name: string; kind: "image"; src: string; className?: string }
   | { name: string; kind: "text" };
 
 const compatibleBrands: BrandItem[] = [
@@ -10,7 +10,7 @@ const compatibleBrands: BrandItem[] = [
   { name: "Suzuki", kind: "image", src: "/brand-logos/suzuki.svg" },
   { name: "Husqvarna", kind: "image", src: "/brand-logos/husqvarna.svg" },
   { name: "Ducati", kind: "image", src: "/brand-logos/ducati.svg" },
-  { name: "Kawasaki", kind: "image", src: "/brand-logos/kawasaki.svg" },
+  { name: "Kawasaki", kind: "image", src: "/brand-logos/kawasaki.svg", className: "brand-logo-image brand-logo-kawasaki" },
   { name: "Yamaha", kind: "image", src: "/brand-logos/yamaha.svg" },
   { name: "GasGas", kind: "text" },
   { name: "KTM", kind: "image", src: "/brand-logos/ktm.svg" },
@@ -18,7 +18,7 @@ const compatibleBrands: BrandItem[] = [
   { name: "Suzuki", kind: "image", src: "/brand-logos/suzuki.svg" },
   { name: "Husqvarna", kind: "image", src: "/brand-logos/husqvarna.svg" },
   { name: "Ducati", kind: "image", src: "/brand-logos/ducati.svg" },
-  { name: "Kawasaki", kind: "image", src: "/brand-logos/kawasaki.svg" },
+  { name: "Kawasaki", kind: "image", src: "/brand-logos/kawasaki.svg", className: "brand-logo-image brand-logo-kawasaki" },
   { name: "Yamaha", kind: "image", src: "/brand-logos/yamaha.svg" },
   { name: "GasGas", kind: "text" },
 ];
@@ -63,7 +63,7 @@ function BrandItemView({ brand }: { brand: BrandItem }) {
     return <span className="brand-text-fallback">{brand.name}</span>;
   }
 
-  return <Image src={brand.src} alt={brand.name} width={140} height={44} className="brand-logo-image" />;
+  return <Image src={brand.src} alt={brand.name} width={140} height={44} className={brand.className ?? "brand-logo-image"} />;
 }
 
 export default function Home() {

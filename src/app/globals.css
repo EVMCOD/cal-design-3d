@@ -98,6 +98,10 @@ button {
   filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(0%) hue-rotate(35deg) brightness(108%) contrast(102%);
 }
 
+.brand-logo-kawasaki {
+  height: 24px;
+}
+
 .brand-text-fallback {
   font-size: 0.9rem;
   font-weight: 700;
