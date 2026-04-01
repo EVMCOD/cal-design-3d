@@ -1,14 +1,14 @@
 const compatibleBrands = [
-  "KTM",
-  "Husqvarna",
-  "GasGas",
-  "Yamaha",
-  "Honda",
-  "Kawasaki",
-  "Suzuki",
-  "Beta",
-  "Sherco",
-  "Fantic",
+  { name: "KTM", accent: "#ff6a00" },
+  { name: "Husqvarna", accent: "#9ca3af" },
+  { name: "GasGas", accent: "#ef4444" },
+  { name: "Yamaha", accent: "#60a5fa" },
+  { name: "Honda", accent: "#f87171" },
+  { name: "Kawasaki", accent: "#22c55e" },
+  { name: "Suzuki", accent: "#facc15" },
+  { name: "Beta", accent: "#fb7185" },
+  { name: "Sherco", accent: "#38bdf8" },
+  { name: "Fantic", accent: "#f97316" },
 ];
 
 const productHighlights = [
@@ -46,13 +46,22 @@ const trustPoints = [
   "Marca enfocada a producto, no a humo visual",
 ];
 
+function BrandLogo({ name, accent }: { name: string; accent: string }) {
+  return (
+    <div className="brand-logo-card" aria-label={name}>
+      <span className="brand-logo-mark" style={{ backgroundColor: accent }} />
+      <span className="brand-logo-name">{name}</span>
+    </div>
+  );
+}
+
 export default function Home() {
   const tickerItems = [...compatibleBrands, ...compatibleBrands];
 
   return (
     <main className="min-h-screen bg-[#0a0a0b] text-white">
-      <section className="relative overflow-hidden border-b border-white/10 bg-[radial-gradient(circle_at_top_left,_rgba(255,106,0,0.20),_transparent_30%),radial-gradient(circle_at_top_right,_rgba(255,255,255,0.08),_transparent_18%),linear-gradient(180deg,#121214_0%,#0a0a0b_100%)]">
-        <div className="absolute inset-0 bg-[linear-gradient(115deg,transparent_0%,rgba(255,255,255,0.03)_45%,transparent_70%)]" />
+      <section className="relative overflow-hidden border-b border-white/10 bg-[radial-gradient(circle_at_left,_rgba(255,106,0,0.18),_transparent_28%),linear-gradient(90deg,#090909_0%,#121214_42%,#2b1206_72%,#ff6a00_160%)]">
+        <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(255,255,255,0.02)_0%,transparent_25%,transparent_75%,rgba(255,106,0,0.06)_100%)]" />
         <div className="relative mx-auto flex max-w-7xl flex-col gap-10 px-6 py-8 sm:px-10 lg:px-12 lg:py-10">
           <header className="flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between">
             <div>
@@ -99,8 +108,8 @@ export default function Home() {
             </div>
 
             <article className="rounded-[32px] border border-white/10 bg-white/5 p-6 shadow-[0_30px_120px_-40px_rgba(0,0,0,0.65)] backdrop-blur">
-              <div className="aspect-[4/3] rounded-[28px] border border-white/10 bg-[linear-gradient(135deg,#1a1a1f_0%,#101011_48%,#3b1f10_100%)] p-5">
-                <div className="flex h-full flex-col justify-between rounded-[24px] border border-white/8 bg-[linear-gradient(180deg,rgba(255,255,255,0.06),rgba(255,255,255,0.02))] p-5">
+              <div className="aspect-[4/3] rounded-[28px] border border-white/10 bg-[linear-gradient(90deg,#090909_0%,#161617_40%,#2b1206_72%,#ff6a00_165%)] p-5">
+                <div className="flex h-full flex-col justify-between rounded-[24px] border border-white/8 bg-[linear-gradient(90deg,rgba(255,255,255,0.04),rgba(255,106,0,0.08))] p-5">
                   <div>
                     <p className="text-sm uppercase tracking-[0.26em] text-orange-300">Producto primero</p>
                     <h2 className="mt-3 text-3xl font-semibold tracking-tight text-white sm:text-4xl">
@@ -132,15 +141,12 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="compatibilidad" className="overflow-hidden border-b border-white/10 bg-[#101012] py-5">
+      <section id="compatibilidad" className="overflow-hidden border-b border-white/10 bg-[linear-gradient(90deg,#090909_0%,#111214_45%,#2b1206_75%,#5f2500_100%)] py-5">
         <div className="ticker-mask">
-          <div className="ticker-track">
+          <div className="ticker-track ticker-track-smooth">
             {tickerItems.map((brand, index) => (
-              <div
-                key={`${brand}-${index}`}
-                className="mx-3 inline-flex min-w-[160px] items-center justify-center rounded-full border border-white/10 bg-white/4 px-6 py-3 text-sm font-semibold uppercase tracking-[0.18em] text-zinc-200"
-              >
-                {brand}
+              <div key={`${brand.name}-${index}`} className="ticker-item-wrap">
+                <BrandLogo name={brand.name} accent={brand.accent} />
               </div>
             ))}
           </div>
@@ -172,9 +178,9 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="border-y border-white/10 bg-[#111214]">
+      <section className="border-y border-white/10 bg-[linear-gradient(90deg,#090909_0%,#111214_48%,#2b1206_82%,#512000_100%)]">
         <div className="mx-auto grid max-w-7xl gap-5 px-6 py-16 sm:px-10 lg:grid-cols-[1.15fr_0.85fr] lg:px-12">
-          <article className="overflow-hidden rounded-[32px] border border-white/10 bg-[linear-gradient(135deg,rgba(255,106,0,0.14),rgba(255,255,255,0.03))] p-8 shadow-sm">
+          <article className="overflow-hidden rounded-[32px] border border-white/10 bg-[linear-gradient(90deg,rgba(255,106,0,0.16),rgba(255,255,255,0.03))] p-8 shadow-sm">
             <p className="text-sm font-semibold uppercase tracking-[0.28em] text-orange-300">Bloque destacado</p>
             <h2 className="mt-4 max-w-2xl text-3xl font-semibold tracking-tight text-white sm:text-4xl">
               Piezas y accesorios que tienen que verse bien, pero sobre todo montar bien y durar.
@@ -223,7 +229,7 @@ export default function Home() {
             </div>
           </article>
 
-          <article className="rounded-[30px] border border-white/10 bg-[linear-gradient(180deg,rgba(255,255,255,0.06),rgba(255,255,255,0.03))] p-6 shadow-sm">
+          <article className="rounded-[30px] border border-white/10 bg-[linear-gradient(90deg,rgba(255,255,255,0.03),rgba(255,106,0,0.08))] p-6 shadow-sm">
             <p className="text-sm font-semibold uppercase tracking-[0.28em] text-orange-400">Dirección visual</p>
             <h2 className="mt-3 text-3xl font-semibold tracking-tight text-white">Premium, robusta y muy enfocada a producto</h2>
             <p className="mt-4 text-sm leading-7 text-zinc-400">
@@ -251,9 +257,9 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="contacto" className="border-t border-white/10 bg-[#111214]">
+      <section id="contacto" className="border-t border-white/10 bg-[linear-gradient(90deg,#0a0a0b_0%,#121214_55%,#371704_100%)]">
         <div className="mx-auto max-w-7xl px-6 py-16 sm:px-10 lg:px-12">
-          <div className="rounded-[36px] border border-white/10 bg-[linear-gradient(135deg,rgba(255,106,0,0.18),rgba(255,255,255,0.03))] p-8 shadow-sm sm:p-10">
+          <div className="rounded-[36px] border border-white/10 bg-[linear-gradient(90deg,rgba(255,106,0,0.18),rgba(255,255,255,0.03))] p-8 shadow-sm sm:p-10">
             <div className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
               <div className="max-w-2xl">
                 <p className="text-sm font-semibold uppercase tracking-[0.28em] text-orange-400">Contacto</p>

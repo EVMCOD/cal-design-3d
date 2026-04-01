@@ -42,22 +42,83 @@ button {
 }
 
 .ticker-mask {
+  position: relative;
   overflow: hidden;
   white-space: nowrap;
 }
 
+.ticker-mask::before,
+.ticker-mask::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 8rem;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.ticker-mask::before {
+  left: 0;
+  background: linear-gradient(90deg, #0a0a0b 0%, rgba(10, 10, 11, 0) 100%);
+}
+
+.ticker-mask::after {
+  right: 0;
+  background: linear-gradient(270deg, #4a1d00 0%, rgba(74, 29, 0, 0) 100%);
+}
+
 .ticker-track {
-  display: inline-flex;
+  display: flex;
   align-items: center;
   width: max-content;
-  animation: ticker-scroll 28s linear infinite;
+  will-change: transform;
+}
+
+.ticker-track-smooth {
+  animation: ticker-scroll 24s linear infinite;
+}
+
+.ticker-item-wrap {
+  flex: 0 0 auto;
+  padding-inline: 0.85rem;
+}
+
+.brand-logo-card {
+  display: inline-flex;
+  min-width: 180px;
+  align-items: center;
+  justify-content: center;
+  gap: 0.9rem;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.04), rgba(255, 106, 0, 0.08));
+  padding: 0.9rem 1.35rem;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04);
+}
+
+.brand-logo-mark {
+  display: inline-block;
+  height: 0.82rem;
+  width: 0.82rem;
+  flex: 0 0 auto;
+  border-radius: 999px;
+  box-shadow: 0 0 18px currentColor;
+}
+
+.brand-logo-name {
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: #f4f4f5;
 }
 
 @keyframes ticker-scroll {
   0% {
-    transform: translateX(0);
+    transform: translate3d(0, 0, 0);
   }
   100% {
-    transform: translateX(-50%);
+    transform: translate3d(-50%, 0, 0);
   }
 }
