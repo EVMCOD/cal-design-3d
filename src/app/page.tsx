@@ -11,7 +11,7 @@ const compatibleBrands: BrandItem[] = [
   { name: "Husqvarna", kind: "image", src: "/brand-logos/husqvarna.svg" },
   { name: "Ducati", kind: "image", src: "/brand-logos/ducati.svg" },
   { name: "Kawasaki", kind: "image", src: "/brand-logos/kawasaki.svg", className: "brand-logo-image brand-logo-kawasaki" },
-  { name: "Yamaha", kind: "image", src: "/brand-logos/yamaha.svg" },
+  { name: "Yamaha", kind: "image", src: "/brand-logos/yamaha.svg", className: "brand-logo-image brand-logo-yamaha" },
   { name: "GasGas", kind: "text" },
   { name: "KTM", kind: "image", src: "/brand-logos/ktm.svg" },
   { name: "Honda", kind: "image", src: "/brand-logos/honda-wing.svg" },
@@ -19,7 +19,7 @@ const compatibleBrands: BrandItem[] = [
   { name: "Husqvarna", kind: "image", src: "/brand-logos/husqvarna.svg" },
   { name: "Ducati", kind: "image", src: "/brand-logos/ducati.svg" },
   { name: "Kawasaki", kind: "image", src: "/brand-logos/kawasaki.svg", className: "brand-logo-image brand-logo-kawasaki" },
-  { name: "Yamaha", kind: "image", src: "/brand-logos/yamaha.svg" },
+  { name: "Yamaha", kind: "image", src: "/brand-logos/yamaha.svg", className: "brand-logo-image brand-logo-yamaha" },
   { name: "GasGas", kind: "text" },
 ];
 
