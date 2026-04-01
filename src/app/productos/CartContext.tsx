@@ -16,6 +16,7 @@ type CartContextValue = {
   clearCart: () => void;
   count: number;
   subtotal: number;
+  detailedItems: Array<(typeof products)[number] & { quantity: number }>;
 };
 
 const CartContext = createContext<CartContextValue | null>(null);
@@ -71,9 +72,19 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
       }, 0),
     [items],
   );
+  const detailedItems = useMemo(
+    () =>
+      items
+        .map((item) => {
+          const product = products.find((entry) => entry.id === item.productId);
+          return product ? { ...product, quantity: item.quantity } : null;
+        })
+        .filter(Boolean) as Array<(typeof products)[number] & { quantity: number }>,
+    [items],
+  );
 
   return (
-    <CartContext.Provider value={{ items, addToCart, removeFromCart, updateQuantity, clearCart, count, subtotal }}>
+    <CartContext.Provider value={{ items, addToCart, removeFromCart, updateQuantity, clearCart, count, subtotal, detailedItems }}>
       {children}
     </CartContext.Provider>
   );

@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { CartProvider } from "./CartContext";
-import CartIndicator from "./components/CartIndicator";
+import CartDropdown from "./components/CartDropdown";
 
 export default function ProductsLayout({ children }: { children: React.ReactNode }) {
   return (
@@ -18,7 +18,7 @@ export default function ProductsLayout({ children }: { children: React.ReactNode
               <Link href="/productos/carrito" className="text-sm text-zinc-300 transition hover:text-white">
                 Carrito
               </Link>
-              <CartIndicator />
+              <CartDropdown />
             </div>
           </div>
         </div>
