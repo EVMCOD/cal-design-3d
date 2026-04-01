@@ -2,112 +2,10 @@
 
 import Link from "next/link";
 import { useMemo, useState } from "react";
-
-type Product = {
-  id: string;
-  name: string;
-  category: string;
-  brand: string;
-  model: string;
-  displacement: string;
-  year: string;
-  status: "Disponible" | "Bajo pedido";
-  description: string;
-};
-
-const products: Product[] = [
-  {
-    id: "ktm-disc-guard-2024",
-    name: "Protector delantero reforzado",
-    category: "Protección",
-    brand: "KTM",
-    model: "250 EXC",
-    displacement: "250cc",
-    year: "2024",
-    status: "Disponible",
-    description: "Protector pensado para uso off-road real, con foco en ajuste y resistencia.",
-  },
-  {
-    id: "husky-cable-guide-2023",
-    name: "Guía de cableado técnico",
-    category: "Montaje",
-    brand: "Husqvarna",
-    model: "TE 300",
-    displacement: "300cc",
-    year: "2023",
-    status: "Disponible",
-    description: "Pieza de montaje limpio para mantener guiado y orden en zonas críticas.",
-  },
-  {
-    id: "yamaha-bracket-2022",
-    name: "Soporte de accesorio lateral",
-    category: "Soportes",
-    brand: "Yamaha",
-    model: "YZ 250F",
-    displacement: "250cc",
-    year: "2022",
-    status: "Bajo pedido",
-    description: "Soporte funcional desarrollado para montaje estable y geometría bien resuelta.",
-  },
-  {
-    id: "kawasaki-cover-2024",
-    name: "Cubierta técnica de protección",
-    category: "Protección",
-    brand: "Kawasaki",
-    model: "KX 450",
-    displacement: "450cc",
-    year: "2024",
-    status: "Disponible",
-    description: "Solución de protección orientada a barro, vibración y uso intensivo.",
-  },
-  {
-    id: "gasgas-mount-2023",
-    name: "Anclaje de fijación a medida",
-    category: "Montaje",
-    brand: "GasGas",
-    model: "EC 300",
-    displacement: "300cc",
-    year: "2023",
-    status: "Bajo pedido",
-    description: "Anclaje adaptado a geometría concreta con enfoque de uso y compatibilidad.",
-  },
-  {
-    id: "honda-hrc-guard-2021",
-    name: "Protector compacto HRC-style",
-    category: "Protección",
-    brand: "Honda",
-    model: "CRF 450R",
-    displacement: "450cc",
-    year: "2021",
-    status: "Disponible",
-    description: "Pieza compacta enfocada a protección, estética limpia y montaje correcto.",
-  },
-  {
-    id: "ducati-multifit-spacer",
-    name: "Spacer técnico multifit",
-    category: "Ajuste",
-    brand: "Ducati",
-    model: "DesertX",
-    displacement: "937cc",
-    year: "2024",
-    status: "Bajo pedido",
-    description: "Spacer mecanizado/impreso para resolver montaje y tolerancias específicas.",
-  },
-  {
-    id: "suzuki-brace-2020",
-    name: "Refuerzo funcional de montaje",
-    category: "Ajuste",
-    brand: "Suzuki",
-    model: "RM-Z 450",
-    displacement: "450cc",
-    year: "2020",
-    status: "Disponible",
-    description: "Refuerzo orientado a fijación estable y mejor comportamiento en uso real.",
-  },
-];
+import AddToCartButton from "./components/AddToCartButton";
+import { products, type Product } from "./catalog-data";
 
 const unique = (key: keyof Product) => Array.from(new Set(products.map((item) => item[key])));
-
 const brands = unique("brand");
 const models = unique("model");
 const displacements = unique("displacement");
@@ -160,7 +58,7 @@ export default function ProductosPage() {
   }, [brand, model, displacement, year]);
 
   return (
-    <main className="min-h-screen bg-[#0a0a0b] text-white">
+    <main>
       <section className="border-b border-white/10 bg-[radial-gradient(circle_at_left,_rgba(255,106,0,0.18),_transparent_28%),linear-gradient(90deg,#090909_0%,#121214_42%,#2b1206_72%,#ff6a00_160%)]">
         <div className="mx-auto max-w-7xl px-6 py-10 sm:px-10 lg:px-12">
           <div className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
@@ -233,9 +131,10 @@ export default function ProductosPage() {
                   <span className="rounded-full border border-white/10 bg-black/20 px-3 py-2">{product.displacement}</span>
                   <span className="rounded-full border border-white/10 bg-black/20 px-3 py-2">{product.year}</span>
                 </div>
-                <button className="mt-6 inline-flex rounded-full bg-orange-500 px-5 py-3 text-sm font-semibold text-black transition hover:bg-orange-400">
-                  Ver producto
-                </button>
+                <div className="mt-5 flex items-center justify-between gap-4">
+                  <span className="text-2xl font-semibold text-white">{product.price}€</span>
+                  <AddToCartButton productId={product.id} />
+                </div>
               </article>
             ))}
           </div>
