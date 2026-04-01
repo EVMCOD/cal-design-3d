@@ -40,3 +40,24 @@ button {
   background: #ff6b35;
   color: #101010;
 }
+
+.ticker-mask {
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.ticker-track {
+  display: inline-flex;
+  align-items: center;
+  width: max-content;
+  animation: ticker-scroll 28s linear infinite;
+}
+
+@keyframes ticker-scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}

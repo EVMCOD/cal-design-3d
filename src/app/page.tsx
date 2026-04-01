@@ -1,112 +1,128 @@
-const services = [
+const compatibleBrands = [
+  "KTM",
+  "Husqvarna",
+  "GasGas",
+  "Yamaha",
+  "Honda",
+  "Kawasaki",
+  "Suzuki",
+  "Beta",
+  "Sherco",
+  "Fantic",
+];
+
+const productHighlights = [
   {
-    title: "Piezas funcionales para motocross",
-    text: "Fabricación de piezas técnicas, soportes, protectores y soluciones personalizadas para moto y equipamiento.",
+    title: "Protectores y piezas funcionales",
+    text: "Piezas pensadas para aguantar uso real, golpes, barro, montaje y mantenimiento de moto.",
   },
   {
-    title: "Diseño CAD y prototipado",
-    text: "Desarrollo desde idea, pieza rota o necesidad concreta hasta prototipo funcional listo para probar.",
+    title: "Compatibilidad y ajuste",
+    text: "Diseños adaptados a modelos, componentes y necesidades concretas para que encaje donde tiene que encajar.",
   },
   {
-    title: "Producción a medida",
-    text: "Series cortas, ajustes específicos y piezas pensadas para montaje real, no solo para enseñar un render.",
+    title: "Desarrollo a medida",
+    text: "Desde una necesidad puntual hasta una serie corta de piezas, con foco en utilidad y confianza de producto.",
   },
 ];
 
-const featuredParts = [
-  {
-    name: "Soportes y anclajes",
-    description: "Piezas adaptadas a tu moto, accesorios o necesidades concretas de montaje.",
-  },
-  {
-    name: "Protectores y refuerzos",
-    description: "Soluciones impresas para proteger, fijar o mejorar componentes expuestos al uso real.",
-  },
-  {
-    name: "Piezas personalizadas",
-    description: "Diseño y fabricación bajo pedido para motocross, taller y proyectos técnicos.",
-  },
+const availableNow = [
+  "Protectores y refuerzos impresos en 3D",
+  "Soportes y anclajes para moto y equipamiento",
+  "Piezas personalizadas bajo pedido",
+  "Desarrollo de soluciones para montaje real",
 ];
 
-const process = [
-  "Cuéntanos qué necesitas o envíanos la pieza de referencia.",
-  "Diseñamos la solución en CAD y validamos medidas y montaje.",
-  "Fabricamos un prototipo o pieza final según el uso.",
-  "Probamos, ajustamos y dejamos la pieza lista para uso real.",
+const inDevelopment = [
+  "Nuevas referencias por marca y modelo",
+  "Más piezas específicas para motocross y enduro",
+  "Catálogo visual más amplio y mejor filtrado por compatibilidad",
 ];
 
-const materials = ["PLA técnico", "PETG", "ABS / ASA", "Otros materiales según aplicación"];
+const trustPoints = [
+  "Diseño CAD aplicado a uso real",
+  "Producción orientada a montaje y resistencia",
+  "Ajustes según necesidad, pieza o referencia",
+  "Marca enfocada a producto, no a humo visual",
+];
 
 export default function Home() {
+  const tickerItems = [...compatibleBrands, ...compatibleBrands];
+
   return (
-    <main className="min-h-screen bg-[#0e0e10] text-white">
-      <section className="border-b border-white/10 bg-[radial-gradient(circle_at_top,_rgba(255,107,53,0.25),_transparent_35%),linear-gradient(180deg,#131316_0%,#0e0e10_100%)]">
-        <div className="mx-auto flex max-w-7xl flex-col gap-10 px-6 py-8 sm:px-10 lg:px-12">
+    <main className="min-h-screen bg-[#0a0a0b] text-white">
+      <section className="relative overflow-hidden border-b border-white/10 bg-[radial-gradient(circle_at_top_left,_rgba(255,106,0,0.20),_transparent_30%),radial-gradient(circle_at_top_right,_rgba(255,255,255,0.08),_transparent_18%),linear-gradient(180deg,#121214_0%,#0a0a0b_100%)]">
+        <div className="absolute inset-0 bg-[linear-gradient(115deg,transparent_0%,rgba(255,255,255,0.03)_45%,transparent_70%)]" />
+        <div className="relative mx-auto flex max-w-7xl flex-col gap-10 px-6 py-8 sm:px-10 lg:px-12 lg:py-10">
           <header className="flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between">
             <div>
-              <p className="text-sm font-semibold uppercase tracking-[0.28em] text-orange-400">CAL Design 3D</p>
-              <p className="mt-2 text-sm text-zinc-400">Diseño técnico e impresión 3D para motocross y piezas personalizadas</p>
+              <p className="text-sm font-semibold uppercase tracking-[0.32em] text-orange-400">CAL 3D</p>
+              <p className="mt-2 max-w-xl text-sm text-zinc-400">
+                Piezas, accesorios y soluciones de impresión 3D para motocross y enduro.
+              </p>
             </div>
             <nav className="flex flex-wrap gap-4 text-sm text-zinc-300">
-              <a href="#servicios" className="transition hover:text-white">Servicios</a>
-              <a href="#piezas" className="transition hover:text-white">Piezas</a>
-              <a href="#proceso" className="transition hover:text-white">Proceso</a>
+              <a href="#productos" className="transition hover:text-white">Productos</a>
+              <a href="#compatibilidad" className="transition hover:text-white">Compatibilidad</a>
+              <a href="#confianza" className="transition hover:text-white">Confianza</a>
               <a href="#contacto" className="transition hover:text-white">Contacto</a>
             </nav>
           </header>
 
-          <div className="grid gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:items-center lg:py-8">
+          <div className="grid gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:items-center lg:py-10">
             <div className="space-y-6">
               <div className="inline-flex items-center gap-2 rounded-full border border-orange-400/20 bg-orange-400/10 px-4 py-2 text-sm text-orange-200">
                 <span className="h-2 w-2 rounded-full bg-orange-400" />
-                Prototipos, piezas funcionales y soluciones a medida
+                Motocross / Enduro / Producto funcional
               </div>
-              <h1 className="max-w-4xl text-5xl font-semibold tracking-tight text-white sm:text-6xl lg:text-7xl">
-                Piezas impresas en 3D pensadas para el uso real en motocross.
+              <h1 className="max-w-5xl text-5xl font-semibold tracking-tight text-white sm:text-6xl lg:text-7xl">
+                Impresión 3D para motos con enfoque de producto, compatibilidad y uso real.
               </h1>
               <p className="max-w-2xl text-base leading-8 text-zinc-300 sm:text-lg">
-                Diseñamos y fabricamos piezas técnicas, soportes, protectores y soluciones personalizadas para moto,
-                taller y proyectos donde importa que encaje, funcione y resista.
+                CAL 3D diseña y fabrica piezas funcionales para motocross y enduro: protectores, soportes,
+                accesorios y soluciones a medida pensadas para montar, aguantar y aportar valor real.
               </p>
               <div className="flex flex-col gap-4 sm:flex-row">
                 <a
-                  href="#contacto"
+                  href="#productos"
                   className="inline-flex items-center justify-center rounded-full bg-orange-500 px-6 py-3 text-sm font-semibold text-black transition hover:bg-orange-400"
                 >
-                  Pedir presupuesto
+                  Ver productos
                 </a>
                 <a
-                  href="#piezas"
+                  href="#contacto"
                   className="inline-flex items-center justify-center rounded-full border border-white/15 px-6 py-3 text-sm font-semibold text-white transition hover:border-white/40"
                 >
-                  Ver trabajos
+                  Pedir una pieza
                 </a>
               </div>
             </div>
 
-            <article className="rounded-[32px] border border-white/10 bg-white/5 p-6 shadow-[0_30px_120px_-40px_rgba(0,0,0,0.6)] backdrop-blur">
-              <div className="aspect-[4/3] rounded-[24px] bg-[linear-gradient(135deg,#2a2a2f,#121214)] p-6">
-                <div className="flex h-full flex-col justify-between rounded-[20px] border border-white/10 bg-[linear-gradient(180deg,rgba(255,255,255,0.08),rgba(255,255,255,0.02))] p-6">
+            <article className="rounded-[32px] border border-white/10 bg-white/5 p-6 shadow-[0_30px_120px_-40px_rgba(0,0,0,0.65)] backdrop-blur">
+              <div className="aspect-[4/3] rounded-[28px] border border-white/10 bg-[linear-gradient(135deg,#1a1a1f_0%,#101011_48%,#3b1f10_100%)] p-5">
+                <div className="flex h-full flex-col justify-between rounded-[24px] border border-white/8 bg-[linear-gradient(180deg,rgba(255,255,255,0.06),rgba(255,255,255,0.02))] p-5">
                   <div>
-                    <p className="text-sm uppercase tracking-[0.24em] text-orange-300">Aplicaciones</p>
-                    <h2 className="mt-3 text-3xl font-semibold tracking-tight text-white">Motocross, prototipado y piezas a medida</h2>
+                    <p className="text-sm uppercase tracking-[0.26em] text-orange-300">Producto primero</p>
+                    <h2 className="mt-3 text-3xl font-semibold tracking-tight text-white sm:text-4xl">
+                      Piezas serias para marcas y motos reales.
+                    </h2>
                   </div>
                   <div className="grid gap-3 sm:grid-cols-2">
-                    <div className="rounded-2xl border border-white/10 bg-black/10 p-4">
+                    <div className="rounded-2xl border border-white/10 bg-black/20 p-4">
                       <p className="text-sm text-zinc-400">Enfoque</p>
-                      <p className="mt-2 text-lg font-semibold text-white">Funcional</p>
+                      <p className="mt-2 text-lg font-semibold text-white">Motocross / Enduro</p>
                     </div>
-                    <div className="rounded-2xl border border-white/10 bg-black/10 p-4">
-                      <p className="text-sm text-zinc-400">Trabajo</p>
-                      <p className="mt-2 text-lg font-semibold text-white">A medida</p>
+                    <div className="rounded-2xl border border-white/10 bg-black/20 p-4">
+                      <p className="text-sm text-zinc-400">Prioridad</p>
+                      <p className="mt-2 text-lg font-semibold text-white">Utilidad real</p>
                     </div>
-                    <div className="rounded-2xl border border-white/10 bg-black/10 p-4">
-                      <p className="text-sm text-zinc-400">Base</p>
-                      <p className="mt-2 text-lg font-semibold text-white">CAD + impresión 3D</p>
+                    <div className="rounded-2xl border border-white/10 bg-black/20 p-4">
+                      <p className="text-sm text-zinc-400">Compatibilidad</p>
+                      <p className="mt-2 text-lg font-semibold text-white">Por marca y aplicación</p>
                     </div>
-                    <div className="rounded-2xl border border-white/10 bg-black/10 p-4">
-                      <p className="text-sm text-zinc-400">Objetivo</p>
-                      <p className="mt-2 text-lg font-semibold text-white">Encajar y durar</p>
+                    <div className="rounded-2xl border border-white/10 bg-black/20 p-4">
+                      <p className="text-sm text-zinc-400">Sensación</p>
+                      <p className="mt-2 text-lg font-semibold text-white">Premium + off-road</p>
                     </div>
                   </div>
                 </div>
@@ -116,74 +132,73 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="servicios" className="mx-auto max-w-7xl px-6 py-16 sm:px-10 lg:px-12">
-        <div className="max-w-2xl space-y-3">
-          <p className="text-sm font-semibold uppercase tracking-[0.28em] text-orange-400">Servicios</p>
-          <h2 className="text-3xl font-semibold tracking-tight text-white sm:text-4xl">Qué hacemos</h2>
-          <p className="text-base leading-7 text-zinc-400 sm:text-lg">
-            Un enfoque práctico: diseñar, prototipar y fabricar piezas que tengan sentido fuera de la pantalla.
-          </p>
-        </div>
-
-        <div className="mt-8 grid gap-5 lg:grid-cols-3">
-          {services.map((service) => (
-            <article key={service.title} className="rounded-[28px] border border-white/10 bg-white/5 p-6 shadow-sm">
-              <h3 className="text-2xl font-semibold tracking-tight text-white">{service.title}</h3>
-              <p className="mt-4 text-sm leading-7 text-zinc-400">{service.text}</p>
-            </article>
-          ))}
-        </div>
-      </section>
-
-      <section id="piezas" className="border-y border-white/10 bg-[#121215]">
-        <div className="mx-auto max-w-7xl px-6 py-16 sm:px-10 lg:px-12">
-          <div className="max-w-2xl space-y-3">
-            <p className="text-sm font-semibold uppercase tracking-[0.28em] text-orange-400">Piezas</p>
-            <h2 className="text-3xl font-semibold tracking-tight text-white sm:text-4xl">Trabajos y aplicaciones</h2>
-            <p className="text-base leading-7 text-zinc-400 sm:text-lg">
-              El objetivo no es solo imprimir: es fabricar piezas que resuelvan un problema real y se puedan montar con confianza.
-            </p>
-          </div>
-
-          <div className="mt-8 grid gap-5 lg:grid-cols-3">
-            {featuredParts.map((part) => (
-              <article key={part.name} className="overflow-hidden rounded-[28px] border border-white/10 bg-black/20 shadow-sm">
-                <div className="h-48 bg-[linear-gradient(135deg,#ff6b35,#602c1b)]" />
-                <div className="p-6">
-                  <h3 className="text-2xl font-semibold tracking-tight text-white">{part.name}</h3>
-                  <p className="mt-4 text-sm leading-7 text-zinc-400">{part.description}</p>
-                </div>
-              </article>
+      <section id="compatibilidad" className="overflow-hidden border-b border-white/10 bg-[#101012] py-5">
+        <div className="ticker-mask">
+          <div className="ticker-track">
+            {tickerItems.map((brand, index) => (
+              <div
+                key={`${brand}-${index}`}
+                className="mx-3 inline-flex min-w-[160px] items-center justify-center rounded-full border border-white/10 bg-white/4 px-6 py-3 text-sm font-semibold uppercase tracking-[0.18em] text-zinc-200"
+              >
+                {brand}
+              </div>
             ))}
           </div>
         </div>
       </section>
 
-      <section id="proceso" className="mx-auto max-w-7xl px-6 py-16 sm:px-10 lg:px-12">
-        <div className="grid gap-8 lg:grid-cols-[0.9fr_1.1fr]">
-          <article className="rounded-[30px] border border-white/10 bg-white/5 p-6 shadow-sm">
-            <p className="text-sm font-semibold uppercase tracking-[0.28em] text-orange-400">Proceso</p>
-            <h2 className="mt-3 text-3xl font-semibold tracking-tight text-white">Cómo trabajamos</h2>
-            <div className="mt-6 space-y-4 text-sm leading-7 text-zinc-400">
-              {process.map((step, index) => (
-                <div key={step} className="rounded-2xl border border-white/10 bg-black/10 p-4">
-                  <p className="text-sm font-semibold text-orange-300">0{index + 1}</p>
-                  <p className="mt-2">{step}</p>
+      <section id="productos" className="mx-auto max-w-7xl px-6 py-16 sm:px-10 lg:px-12">
+        <div className="grid gap-10 lg:grid-cols-[0.95fr_1.05fr] lg:items-end">
+          <div className="space-y-3">
+            <p className="text-sm font-semibold uppercase tracking-[0.28em] text-orange-400">Productos</p>
+            <h2 className="text-3xl font-semibold tracking-tight text-white sm:text-5xl">
+              Un catálogo pensado para vender producto, no para rellenar una landing.
+            </h2>
+          </div>
+          <p className="max-w-2xl text-base leading-8 text-zinc-400 sm:text-lg">
+            La prioridad es que se entienda rápido qué hace CAL 3D, para qué motos trabaja y por qué sus piezas
+            merecen confianza: compatibilidad, uso real, ajuste y soluciones orientadas a motocross y enduro.
+          </p>
+        </div>
+
+        <div className="mt-10 grid gap-5 lg:grid-cols-3">
+          {productHighlights.map((item) => (
+            <article key={item.title} className="rounded-[30px] border border-white/10 bg-white/5 p-6 shadow-sm">
+              <div className="mb-5 h-1 w-16 rounded-full bg-orange-500" />
+              <h3 className="text-2xl font-semibold tracking-tight text-white">{item.title}</h3>
+              <p className="mt-4 text-sm leading-7 text-zinc-400">{item.text}</p>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section className="border-y border-white/10 bg-[#111214]">
+        <div className="mx-auto grid max-w-7xl gap-5 px-6 py-16 sm:px-10 lg:grid-cols-[1.15fr_0.85fr] lg:px-12">
+          <article className="overflow-hidden rounded-[32px] border border-white/10 bg-[linear-gradient(135deg,rgba(255,106,0,0.14),rgba(255,255,255,0.03))] p-8 shadow-sm">
+            <p className="text-sm font-semibold uppercase tracking-[0.28em] text-orange-300">Bloque destacado</p>
+            <h2 className="mt-4 max-w-2xl text-3xl font-semibold tracking-tight text-white sm:text-4xl">
+              Piezas y accesorios que tienen que verse bien, pero sobre todo montar bien y durar.
+            </h2>
+            <p className="mt-4 max-w-2xl text-base leading-8 text-zinc-300">
+              CAL 3D no va de renders bonitos sin contexto. Va de soluciones impresas para motos y accesorios que
+              necesitan funcionar en el mundo real: barro, vibración, ajuste, montaje y uso continuo.
+            </p>
+            <div className="mt-8 grid gap-3 sm:grid-cols-2">
+              {availableNow.map((item) => (
+                <div key={item} className="rounded-2xl border border-white/10 bg-black/20 p-4 text-sm font-medium text-white">
+                  {item}
                 </div>
               ))}
             </div>
           </article>
 
-          <article className="rounded-[30px] border border-white/10 bg-white/5 p-6 shadow-sm">
-            <p className="text-sm font-semibold uppercase tracking-[0.28em] text-orange-400">Materiales</p>
-            <h2 className="mt-3 text-3xl font-semibold tracking-tight text-white">Elegimos el material según la pieza y su uso</h2>
-            <p className="mt-4 text-sm leading-7 text-zinc-400">
-              No todas las piezas piden lo mismo. Según esfuerzo, temperatura, flexibilidad o acabado, trabajamos con distintos materiales para ajustar la solución al uso real.
-            </p>
-            <div className="mt-6 grid gap-3 sm:grid-cols-2">
-              {materials.map((material) => (
-                <div key={material} className="rounded-2xl border border-white/10 bg-black/10 p-4 text-sm font-medium text-white">
-                  {material}
+          <article className="rounded-[32px] border border-white/10 bg-white/5 p-8 shadow-sm">
+            <p className="text-sm font-semibold uppercase tracking-[0.28em] text-zinc-300">En desarrollo</p>
+            <h3 className="mt-4 text-2xl font-semibold tracking-tight text-white">Más profundidad de catálogo y compatibilidad</h3>
+            <div className="mt-6 space-y-3">
+              {inDevelopment.map((item) => (
+                <div key={item} className="rounded-2xl border border-white/10 bg-black/15 p-4 text-sm leading-7 text-zinc-300">
+                  {item}
                 </div>
               ))}
             </div>
@@ -191,17 +206,63 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="contacto" className="border-t border-white/10 bg-[#121215]">
+      <section id="confianza" className="mx-auto max-w-7xl px-6 py-16 sm:px-10 lg:px-12">
+        <div className="grid gap-8 lg:grid-cols-[0.9fr_1.1fr]">
+          <article className="rounded-[30px] border border-white/10 bg-white/5 p-6 shadow-sm">
+            <p className="text-sm font-semibold uppercase tracking-[0.28em] text-orange-400">Confianza</p>
+            <h2 className="mt-3 text-3xl font-semibold tracking-tight text-white">Qué tiene que transmitir la marca</h2>
+            <p className="mt-4 text-sm leading-7 text-zinc-400">
+              Producto serio. Ajuste real. Compatibilidad visible. Sensación premium, pero con energía mecánica y off-road.
+            </p>
+            <div className="mt-6 grid gap-3">
+              {trustPoints.map((point) => (
+                <div key={point} className="rounded-2xl border border-white/10 bg-black/10 p-4 text-sm font-medium text-white">
+                  {point}
+                </div>
+              ))}
+            </div>
+          </article>
+
+          <article className="rounded-[30px] border border-white/10 bg-[linear-gradient(180deg,rgba(255,255,255,0.06),rgba(255,255,255,0.03))] p-6 shadow-sm">
+            <p className="text-sm font-semibold uppercase tracking-[0.28em] text-orange-400">Dirección visual</p>
+            <h2 className="mt-3 text-3xl font-semibold tracking-tight text-white">Premium, robusta y muy enfocada a producto</h2>
+            <p className="mt-4 text-sm leading-7 text-zinc-400">
+              La referencia estructural puede venir de EVTL, pero la sensación final tiene que ser otra: más moto, más
+              catálogo, más compatibilidad, más utilidad y menos vibra tech. El movimiento visual suma cuando refuerza
+              marca y producto, no cuando complica la lectura.
+            </p>
+            <div className="mt-8 rounded-[28px] border border-white/10 bg-black/20 p-5">
+              <div className="grid gap-3 sm:grid-cols-3">
+                <div className="rounded-2xl border border-white/10 bg-white/5 p-4 text-center">
+                  <p className="text-xs uppercase tracking-[0.2em] text-zinc-400">Tono</p>
+                  <p className="mt-2 text-lg font-semibold text-white">Robusto</p>
+                </div>
+                <div className="rounded-2xl border border-white/10 bg-white/5 p-4 text-center">
+                  <p className="text-xs uppercase tracking-[0.2em] text-zinc-400">Marca</p>
+                  <p className="mt-2 text-lg font-semibold text-white">Seria</p>
+                </div>
+                <div className="rounded-2xl border border-white/10 bg-white/5 p-4 text-center">
+                  <p className="text-xs uppercase tracking-[0.2em] text-zinc-400">Venta</p>
+                  <p className="mt-2 text-lg font-semibold text-white">Directa</p>
+                </div>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section id="contacto" className="border-t border-white/10 bg-[#111214]">
         <div className="mx-auto max-w-7xl px-6 py-16 sm:px-10 lg:px-12">
-          <div className="rounded-[36px] border border-white/10 bg-[linear-gradient(135deg,rgba(255,107,53,0.18),rgba(255,255,255,0.03))] p-8 shadow-sm sm:p-10">
+          <div className="rounded-[36px] border border-white/10 bg-[linear-gradient(135deg,rgba(255,106,0,0.18),rgba(255,255,255,0.03))] p-8 shadow-sm sm:p-10">
             <div className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
               <div className="max-w-2xl">
                 <p className="text-sm font-semibold uppercase tracking-[0.28em] text-orange-400">Contacto</p>
                 <h2 className="mt-3 text-3xl font-semibold tracking-tight text-white sm:text-4xl">
-                  Si tienes una pieza en mente, la trabajamos contigo.
+                  Si tienes una pieza, una necesidad o una idea de producto, la bajamos a algo real.
                 </h2>
                 <p className="mt-4 text-base leading-7 text-zinc-300">
-                  Cuéntanos qué necesitas, para qué moto o aplicación es, y vemos la mejor forma de diseñarlo y fabricarlo.
+                  Cuéntanos para qué moto o aplicación es, qué problema quieres resolver y qué nivel de ajuste necesitas.
+                  La idea es ayudarte a convertirlo en una pieza útil, compatible y bien resuelta.
                 </p>
               </div>
               <div className="flex flex-col gap-3 sm:flex-row">
