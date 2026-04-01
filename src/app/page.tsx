@@ -80,7 +80,7 @@ export default function Home() {
               </p>
             </div>
             <nav className="flex flex-wrap gap-4 text-sm text-zinc-300">
-              <a href="#productos" className="transition hover:text-white">Productos</a>
+              <a href="/productos" className="transition hover:text-white">Productos</a>
               <a href="#compatibilidad" className="transition hover:text-white">Compatibilidad</a>
               <a href="#confianza" className="transition hover:text-white">Confianza</a>
               <a href="#contacto" className="transition hover:text-white">Contacto</a>
