@@ -87,7 +87,7 @@ function BrandItemView({ brand }: { brand: BrandItem }) {
 export default function Home() {
   return (
     <main className="min-h-screen bg-[#0a0a0b] text-white">
-      <section className="relative overflow-hidden border-b border-white/10 bg-[#090909]">
+      <section className="relative overflow-hidden bg-[#090909]">
         <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(255,106,0,0.08)_0%,rgba(255,106,0,0.02)_7%,transparent_14%,transparent_86%,rgba(255,106,0,0.02)_93%,rgba(255,106,0,0.08)_100%)]" />
         <div className="relative mx-auto flex max-w-7xl flex-col gap-10 px-6 py-8 sm:px-10 lg:px-12 lg:py-10">
           <header className="flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between">
@@ -157,7 +157,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="marcas" className="border-b border-white/10 bg-[#0b0b0c] px-6 py-8 sm:px-10 lg:px-12">
+      <section id="marcas" className="bg-[#0b0b0c] px-6 py-8 sm:px-10 lg:px-12">
         <div className="mx-auto max-w-7xl">
           <div className="mb-6 flex flex-col gap-3 lg:flex-row lg:items-end lg:justify-between">
             <div>
@@ -215,7 +215,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="border-y border-white/10 bg-[#0a0a0b]">
+      <section className="bg-[#0a0a0b]">
         <div className="mx-auto grid max-w-7xl gap-5 px-6 py-16 sm:px-10 lg:grid-cols-[1.15fr_0.85fr] lg:px-12">
           <article className="overflow-hidden rounded-[32px] border border-white/10 bg-[linear-gradient(90deg,rgba(255,106,0,0.08),rgba(255,255,255,0.03))] p-8 shadow-sm">
             <p className="text-sm font-semibold uppercase tracking-[0.28em] text-orange-300">Compatibilidad y fit</p>
@@ -250,7 +250,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="contacto" className="border-t border-white/10 bg-[#0a0a0b]">
+      <section id="contacto" className="bg-[#0a0a0b]">
         <div className="mx-auto max-w-7xl px-6 py-16 sm:px-10 lg:px-12">
           <div className="rounded-[36px] border border-white/10 bg-[linear-gradient(90deg,rgba(255,106,0,0.08),rgba(255,255,255,0.03))] p-8 shadow-sm sm:p-10">
             <div className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
