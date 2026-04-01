@@ -53,12 +53,17 @@ const categoryBlocks: CategoryBlock[] = [
   {
     title: "Ajuste por modelo",
     text: "Diseños adaptados a marca, modelo, cilindrada y año para mejorar encaje y montaje.",
-    image: "/mock-products/ajuste-modelo.jpg",
+    image: "/mock-products/diseno-3d.jpg",
   },
   {
     title: "Desarrollo a medida",
     text: "Cuando no existe la pieza, se diseña una solución desde cero con criterio de uso real.",
-    image: "/mock-products/desarrollo-medida.jpg",
+    image: "/mock-products/impresion-3d.jpg",
+  },
+  {
+    title: "Prototipado",
+    text: "Del taller al modelo y del modelo a la pieza: iteración real antes de cerrar producto.",
+    image: "/mock-products/prototipo-taller.jpg",
   },
 ];
 
@@ -190,28 +195,33 @@ export default function Home() {
           <div className="space-y-3">
             <p className="text-sm font-semibold uppercase tracking-[0.28em] text-orange-400">Categorías</p>
             <h2 className="text-3xl font-semibold tracking-tight text-white sm:text-5xl">
-              Protectores, soportes, accesorios y desarrollo a medida.
+              Producto real, proceso real y desarrollo técnico visible.
             </h2>
           </div>
           <p className="max-w-2xl text-base leading-8 text-zinc-400 sm:text-lg">
-            La home tiene que oler a catálogo real. Menos explicación y más familias de producto que ayuden a entender rápido qué tipo de piezas hace CAL 3D y para qué tipo de moto están pensadas.
+            Esta parte ya no tiene que parecer una lista de viñetas. Tiene que moverse como catálogo, enseñar más producto y mezclar bien el mundo moto con el mundo diseño/impresión 3D.
           </p>
         </div>
 
-        <div className="mt-10 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
-          {categoryBlocks.map((item) => (
-            <article key={item.title} className="overflow-hidden rounded-[30px] border border-white/10 bg-white/5 shadow-sm">
-              <div className="relative h-52 overflow-hidden">
-                <Image src={item.image} alt={item.title} fill className="object-cover" />
-                <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(0,0,0,0.08),rgba(0,0,0,0.58))]" />
-              </div>
-              <div className="p-6">
-                <div className="mb-5 h-1 w-16 rounded-full bg-orange-500" />
-                <h3 className="text-2xl font-semibold tracking-tight text-white">{item.title}</h3>
-                <p className="mt-4 text-sm leading-7 text-zinc-400">{item.text}</p>
-              </div>
-            </article>
-          ))}
+        <div className="mt-10 overflow-x-auto pb-4">
+          <div className="flex w-max gap-5 pr-6">
+            {categoryBlocks.map((item) => (
+              <article key={item.title} className="w-[320px] flex-none overflow-hidden rounded-[30px] border border-white/10 bg-white/5 shadow-sm">
+                <div className="relative h-56 overflow-hidden">
+                  <Image src={item.image} alt={item.title} fill className="object-cover" />
+                  <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(0,0,0,0.08),rgba(0,0,0,0.62))]" />
+                </div>
+                <div className="p-6">
+                  <div className="mb-5 h-1 w-16 rounded-full bg-orange-500" />
+                  <h3 className="text-2xl font-semibold tracking-tight text-white">{item.title}</h3>
+                  <p className="mt-4 text-sm leading-7 text-zinc-400">{item.text}</p>
+                  <a href="/productos" className="mt-6 inline-flex text-sm font-semibold text-orange-300 transition hover:text-orange-200">
+                    Ver productos relacionados →
+                  </a>
+                </div>
+              </article>
+            ))}
+          </div>
         </div>
       </section>
 
