@@ -99,7 +99,11 @@ button {
 }
 
 .brand-logo-kawasaki {
-  height: 24px;
+  height: 28px;
+}
+
+.brand-logo-yamaha {
+  height: 36px;
 }
 
 .brand-text-fallback {
