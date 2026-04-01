@@ -1,14 +1,14 @@
+import Image from "next/image";
+
 const compatibleBrands = [
-  { name: "KTM", accent: "#ff6a00" },
-  { name: "Husqvarna", accent: "#9ca3af" },
-  { name: "GasGas", accent: "#ef4444" },
-  { name: "Yamaha", accent: "#60a5fa" },
-  { name: "Honda", accent: "#f87171" },
-  { name: "Kawasaki", accent: "#22c55e" },
-  { name: "Suzuki", accent: "#facc15" },
-  { name: "Beta", accent: "#fb7185" },
-  { name: "Sherco", accent: "#38bdf8" },
-  { name: "Fantic", accent: "#f97316" },
+  { name: "KTM", src: "/brand-logos/ktm.svg" },
+  { name: "Honda", src: "/brand-logos/honda.svg" },
+  { name: "Suzuki", src: "/brand-logos/suzuki.svg" },
+  { name: "Husqvarna", src: "/brand-logos/husqvarna.svg" },
+  { name: "KTM", src: "/brand-logos/ktm.svg" },
+  { name: "Honda", src: "/brand-logos/honda.svg" },
+  { name: "Suzuki", src: "/brand-logos/suzuki.svg" },
+  { name: "Husqvarna", src: "/brand-logos/husqvarna.svg" },
 ];
 
 const productHighlights = [
@@ -46,18 +46,7 @@ const trustPoints = [
   "Marca enfocada a producto, no a humo visual",
 ];
 
-function BrandLogo({ name, accent }: { name: string; accent: string }) {
-  return (
-    <div className="brand-logo-card" aria-label={name}>
-      <span className="brand-logo-mark" style={{ backgroundColor: accent }} />
-      <span className="brand-logo-name">{name}</span>
-    </div>
-  );
-}
-
 export default function Home() {
-  const tickerItems = [...compatibleBrands, ...compatibleBrands];
-
   return (
     <main className="min-h-screen bg-[#0a0a0b] text-white">
       <section className="relative overflow-hidden border-b border-white/10 bg-[radial-gradient(circle_at_left,_rgba(255,106,0,0.18),_transparent_28%),linear-gradient(90deg,#090909_0%,#121214_42%,#2b1206_72%,#ff6a00_160%)]">
@@ -141,14 +130,16 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="compatibilidad" className="overflow-hidden border-b border-white/10 bg-[linear-gradient(90deg,#090909_0%,#111214_45%,#2b1206_75%,#5f2500_100%)] py-5">
-        <div className="ticker-mask">
-          <div className="ticker-track ticker-track-smooth">
-            {tickerItems.map((brand, index) => (
-              <div key={`${brand.name}-${index}`} className="ticker-item-wrap">
-                <BrandLogo name={brand.name} accent={brand.accent} />
-              </div>
-            ))}
+      <section id="compatibilidad" className="overflow-hidden border-b border-white/10 bg-[linear-gradient(90deg,#090909_0%,#111214_45%,#2b1206_75%,#5f2500_100%)] py-6">
+        <div className="logo-ticker-shell">
+          <div className="ticker-mask">
+            <div className="ticker-track ticker-track-smooth">
+              {compatibleBrands.map((brand, index) => (
+                <div key={`${brand.name}-${index}`} className="ticker-logo-wrap" aria-label={brand.name}>
+                  <Image src={brand.src} alt={brand.name} width={140} height={44} className="brand-logo-image" />
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
