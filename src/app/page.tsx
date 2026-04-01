@@ -102,7 +102,7 @@ export default function Home() {
               </p>
               <div className="flex flex-col gap-4 sm:flex-row">
                 <a
-                  href="#productos"
+                  href="/productos"
                   className="inline-flex items-center justify-center rounded-full bg-orange-500 px-6 py-3 text-sm font-semibold text-black transition hover:bg-orange-400"
                 >
                   Ver productos
